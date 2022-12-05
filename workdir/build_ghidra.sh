@@ -15,7 +15,9 @@ ln -s $HOME/ghidra.bin ghidra.bin # hack
 
 cd $START_DIR/ghidra
 gradle --init-script gradle/support/fetchDependencies.gradle init
-gradle yajswDevUnpack
+#gradle yajswDevUnpack
+gradle prepDev
+gradle eclipse -PeclipsePDE
 gradle buildGhidra
 
 # Tests

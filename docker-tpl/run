@@ -3,7 +3,7 @@ set -ex
 
 start_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 build_command="${@:1}"
-image=dukebarman/ghidra-builder
+image=zorga/ghidra-builder
 
 docker run \
     -it \

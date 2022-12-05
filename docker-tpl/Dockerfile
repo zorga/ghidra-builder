@@ -1,8 +1,9 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 MAINTAINER @dukebarman
+# forker by @zorga
 
-ARG gradle_version=7.3
+ARG gradle_version=7.6
 ARG jdk_version=17
 
 RUN echo Europe/London > /etc/timezone
