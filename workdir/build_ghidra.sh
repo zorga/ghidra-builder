@@ -9,6 +9,10 @@ mkdir -p $OUTPUT_DIR
 
 if [ ! -d "ghidra" ]; then
     git clone https://github.com/NationalSecurityAgency/ghidra
+else
+    cd ghidra
+    git pull
+    cd ..
 fi
 
 ln -s $HOME/ghidra.bin ghidra.bin # hack
@@ -18,6 +22,7 @@ gradle --init-script gradle/support/fetchDependencies.gradle init
 #gradle yajswDevUnpack
 gradle prepDev
 gradle eclipse -PeclipsePDE
+gradle buildNatives
 gradle buildGhidra
 
 # Tests
